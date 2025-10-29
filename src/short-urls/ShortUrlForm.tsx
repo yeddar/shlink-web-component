@@ -173,7 +173,7 @@ const ShortUrlForm: FCWithDeps<ShortUrlFormConnectProps, ShortUrlFormDeps> = (
                     <div className="flex flex-col lg:flex-row gap-4">
                       <div className="lg:w-1/2">
                         <Input
-                          placeholder="Custom slug"
+                          placeholder="Slug personalitzat"
                           value={shortUrlData.customSlug ?? ''}
                           onChange={(e) => setShortUrlData((prev) => ({ ...prev, customSlug: e.target.value }))}
                           disabled={hasValue(shortUrlData.shortCodeLength)}

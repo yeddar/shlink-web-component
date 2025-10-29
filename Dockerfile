@@ -8,8 +8,8 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | b
     \. "$HOME/.nvm/nvm.sh" && \
     nvm install ${NODE_VERSION}
 
-# Install tini
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /sbin/tini
+# Copy tini
+COPY tini-amd64 /sbin/tini
 RUN chmod +x /sbin/tini
 # Set tini as the entry point, as node does not properly handle signals
 ENTRYPOINT ["/sbin/tini", "--"]
